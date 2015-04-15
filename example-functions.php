@@ -436,6 +436,121 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		)
 	);
 
+	$meta_boxes['switchy'] = array(
+    'id'          => $prefix . 'switchy',
+	'pages'      => array( 'page', ), // Post type
+	'title'   => __( 'Switchy', 'cmb' ),
+	// 'show_on' => array( 'key' => 'id', 'value' => '6' ),
+    'type'        => 'group',
+    'description' => __( 'Creates switchy entries in any page', 'cmb2' ),
+	'repeatable'  => true,
+	'fields'     => array(
+        array(
+           'id'          => $prefix . 'switchy',
+           'type'        => 'group',
+           'description' => __( 'Switchy sections', 'cmb' ),
+           'options'     => array(
+           'group_title'   => __( 'Switchy {#}', 'cmb' ),
+           'add_button'    => __( 'Add switchy', 'cmb' ),
+           'remove_button' => __( 'Remove switchy', 'cmb' ),
+           'sortable'      => true, // beta
+      ),
+      'fields'  => array(
+            array(
+                'name' => 'Title',
+                'id'   => $prefix . 'title',
+                'type' => 'text',
+                'description' => '',
+             ),
+             array(
+                'name' => 'Switchy text',
+                'desc' => '',
+                'id'   => $prefix . 'text',
+                'type' => 'textarea'
+             ),
+             array(
+                'name' => 'Text width',
+                'desc' => '',
+                'id'   => $prefix . 'text_width',
+                'type' => 'text'
+             ),
+             array(
+                'name' => 'Image width',
+                'desc' => '',
+                'id'   => $prefix . 'image_width',
+                'type' => 'text'
+             ),
+             array(
+                'name'    => 'Text position',
+                'desc'    => 'Position of the text',
+                'id'      => $prefix . 'position',
+                'type'    => 'select',
+                'options' => array(
+                     'Select'   => __( 'Select text position', 'cmb' ),
+                     'Print'       => __( 'Left', 'cmb' ),
+                     'Online'   => __( 'Right', 'cmb' ),
+            ),
+            'default' => 'Left',
+        ),
+        array(
+            'name'  => 'Image',
+            'desc'  => 'Upload an image or enter an URL.',
+            'id'    => $prefix . 'image',
+            'type'  => 'file',
+            'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+            ),
+        ),
+        ),
+    ),
+    /*'options'     => array(
+        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+        'remove_button' => __( 'Remove Entry', 'cmb' ),
+        'sortable'      => true, // beta
+    ),
+    // Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+    'fields'      => array(
+        array(
+            'name' => 'Entry Title',
+            'id'   => $prefix . 'switchy_title',
+            'type' => 'text',
+            // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+        ),
+        array(
+            'name' => 'Text',
+            'description' => 'Write a short description for this entry',
+            'id'   => $prefix . 'switchy_text',
+            'type' => 'textarea',
+        ),
+        array(
+            'name' => 'Entry Image',
+            'id'   => $prefix . 'switchy_image',
+            'type' => 'file',
+        ),
+		array(
+		    'name'    => 'Position',
+		    'desc'    => 'Select text position',
+		    'id'      => $prefix . 'position',
+		    'type'    => 'select',
+		    'options' => array(
+		        'standard' => __( 'Left', 'left' ),
+		        'custom'   => __( 'Right', 'right' ),
+		    ),
+		    'default' => 'left',
+		),
+		array(
+			'name' => 'Text width',
+			'id'   => $prefix . 'text_width',
+			'type' => 'text',
+		),
+		array(
+			'name' => 'Image width',
+			'id'   => $prefix . 'image_width',
+			'type' => 'text',
+		),
+    ),*/
+);
+
 	// Add other metaboxes as needed
 
 	return $meta_boxes;
