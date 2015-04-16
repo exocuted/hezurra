@@ -20,7 +20,7 @@
 <div class="container">
 <nav class="nav-main row">
     <div class="logoWrapper three columns">
-        <a href="/" title="Ir a la portada" class="titol"><h1><?php bloginfo('name') ?></h1></a>
+        <a href="/hezurra" title="Ir a la portada" class="titol"><h1><?php bloginfo('name') ?></h1></a>
     </div>
     <!-- NAVWALKER -->
     <div class="nine">

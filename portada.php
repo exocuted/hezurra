@@ -44,21 +44,53 @@ $prefix = '_cmb_';
 	    if ( isset( $entry['_cmb_title'] ) )
 	        $title = esc_html( $entry['_cmb_title'] );
 
+			if ( isset( $entry['_cmb_text_width'] ) )
+	        $textw = esc_html( $entry['_cmb_text_width'] );
+
+			if ( isset( $entry['_cmb_image_width'] ) )
+	        $imgw = esc_html( $entry['_cmb_image_width'] );
+
+			if ( isset( $entry['_cmb_position'] ) )
+					$pos = $entry['_cmb_position'];
+
 	    if ( isset( $entry['_cmb_text'] ) )
 	        $desc = wpautop( $entry['_cmb_text'] );
 
-	    if ( isset( $entry['image_id'] ) ) {
-	        $img = wp_get_attachment_image( $entry['image_id'], 'share-pick', null, array(
+	    if ( isset( $entry['_cmb_image'] ) ) {
+	        /*$img = wp_get_attachment_image( $entry['_cmb_image'], 'share-pick', null, array(
 	            'class' => 'imatge-switchy',
-	        ) );
+	        ) );*/
+					$img = $entry['_cmb_image'];
 	    }
 	    $caption = isset( $entry['image_caption'] ) ? wpautop( $entry['image_caption'] ) : '';
 
-	    ?><h3><?php echo $title ?></h3><?php
-		echo $desc;
-	}
-
-	?>
+	    ?>
+			<div class="seccio">
+				<div class="row">
+						<?php if($pos == 'Left') { ?>
+							<div class="<?php echo $textw ?> columns">
+							<h3><?php echo $title ?></h3>
+								<p>
+									<?php echo $desc ?>
+								</p>
+							</div>
+							<div class="<?php echo $imgw ?> columns">
+								<img src="<?php echo $img ?>" alt="Caption" class="imatge-switchy"/>
+							</div>
+						<?php } else if($pos == 'Right') { ?>
+							<div class="<?php echo $imgw ?> columns">
+								<img src="<?php echo $img ?>" alt="Caption" class="imatge-switchy"/>
+							</div>
+							<div class="<?php echo $textw ?> columns">
+							<h3><?php echo $title ?></h3>
+								<p>
+									<?php echo $desc ?>
+								</p>
+							</div>
+						<?php } ?>
+				</div>
+			</div>
+	<?php } ?>
 </div>
 <!-- <?php get_sidebar(); ?> -->
 <?php get_footer(); ?>

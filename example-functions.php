@@ -487,8 +487,8 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
                 'type'    => 'select',
                 'options' => array(
                      'Select'   => __( 'Select text position', 'cmb' ),
-                     'Print'       => __( 'Left', 'cmb' ),
-                     'Online'   => __( 'Right', 'cmb' ),
+                     'Left'       => __( 'Left', 'cmb' ),
+                     'Right'   => __( 'Right', 'cmb' ),
             ),
             'default' => 'Left',
         ),

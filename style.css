@@ -11,6 +11,9 @@ Tags: clean, basic, starter
 The CSS and HTML are released under the GPL:
 http://www.opensource.org/licenses/gpl-3.0.html
 */
+a {
+	text-decoration: none;
+}
 .nav-main {
 	width: 100%;
 	padding-top: 20px;
@@ -37,7 +40,6 @@ http://www.opensource.org/licenses/gpl-3.0.html
 	margin-right: 0;
 }
 .menu li a {
-	text-decoration: none;
 	color: #4d7cbc;
 	padding: 0.5em 0.7em;
 	border-radius: 3px;
@@ -56,10 +58,20 @@ http://www.opensource.org/licenses/gpl-3.0.html
 /* CAP */
 .cap {
 	width: 100%;
-	background: #b71010;
 	background-size: cover;
-	background-position: center -650px !important;
+	background-position: center center !important;
 	height: 350px;
+}
+.minicap {
+	width: 100%;
+	background: #d4d4d4;
+	height: 150px;
+	text-align: center;
+}
+.minicap h2 {
+	padding-top: 50px;
+	color: white;
+	text-shadow: 0px 2px 0px #9c9c9c;
 }
 .info-cap {
 	padding: 2em 0em;
@@ -72,7 +84,6 @@ http://www.opensource.org/licenses/gpl-3.0.html
 }
 .botocap {
 	padding: 1em 1em;
-	text-decoration: none;
 	color: white;
 	border: 1px solid white;
 	transition: all 300ms ease-in-out;
@@ -84,4 +95,18 @@ http://www.opensource.org/licenses/gpl-3.0.html
 /* CONTINGUTS */
 .contingut {
 	margin-top: 20px;
+}
+/* SIDEBAR */
+.sbar ul {
+	list-style-type: none;
+}
+.sbar h2 {
+	font-size: 1.3em;
+}
+/* Switchy */
+.seccio {
+	margin-top: 20px;
+}
+.imatge-switchy {
+	padding: 20px 20px;
 }
