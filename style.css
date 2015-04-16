@@ -109,4 +109,9 @@ a {
 }
 .imatge-switchy {
 	padding: 20px 20px;
+	width: 100%;
+	border-radius: 100%;
+}
+.imagep img {
+	width: 100% !important;
 }

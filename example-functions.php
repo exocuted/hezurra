@@ -550,7 +550,43 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		),
     ),*/
 );
-
+$meta_boxes['portfolio'] = array(
+	'id'          => $prefix . 'portfolio',
+	'pages'      => array( 'page', ), // Post type
+	'title'   => __( 'Portfolio', 'cmb' ),
+	'show_on' => array( 'key' => 'slug', 'value' => 'portfolio' ),
+	'type'        => 'group',
+	'description' => __( 'Creates portfolio entries in portfolio page', 'cmb2' ),
+	'repeatable'  => true,
+	'fields'     => array(
+			array(
+				'id'          => $prefix . 'portfolio',
+				'type'        => 'group',
+				'description' => __( 'Photos', 'cmb' ),
+				'options'     => array(
+				'group_title'   => __( 'Add photo {#}', 'cmb' ),
+				'add_button'    => __( 'Add photo', 'cmb' ),
+				'remove_button' => __( 'Remove photo', 'cmb' ),
+				'sortable'      => true, // beta
+		),
+		'fields'  => array(
+					array(
+							'name' => 'Title photo',
+							'id'   => $prefix . 'titlep',
+							'type' => 'text',
+							'description' => '',
+					),
+					array(
+							'name'  => 'Image',
+							'desc'  => 'Upload an image or enter an URL.',
+							'id'    => $prefix . 'imagep',
+							'type'  => 'file',
+							'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+							),
+					),
+			),
+	),
+);
 	// Add other metaboxes as needed
 
 	return $meta_boxes;
