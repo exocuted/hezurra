@@ -71,5 +71,6 @@ $prefix = '_cmb_';
 			</div>
 	<?php } ?>
 </div>
+</div>
 <!-- <?php get_sidebar(); ?> -->
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="container">
 <h1>Page Not Found</h1>
 <p>
   <strong>Did you type the URL?</strong><br />
@@ -13,6 +13,6 @@
   <strong>Did you follow a link from another site?</strong><br />
   Links from other sites can sometimes be outdated or misspelled.
 </p>
-
-<?php get_sidebar(); ?>
+</div>
+<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -36,4 +36,39 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
 
 include("example-functions.php");
 
+function arphabet_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Footer 1',
+    'id'            => 'footer_1',
+    'before_widget' => '<div class="footer1">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ) );
+
+
+    register_sidebar( array(
+    'name'          => 'Footer 2',
+    'id'            => 'footer_2',
+    'before_widget' => '<div class="footer2">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ) );
+
+    register_sidebar( array(
+    'name'          => 'Footer 3',
+    'id'            => 'footer_3',
+    'before_widget' => '<div class="footer3">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ) );
+
+}
+
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+
 ?>
