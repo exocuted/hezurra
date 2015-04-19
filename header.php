@@ -23,8 +23,17 @@
         <a href="/hezurra" title="Ir a la portada" class="titol"><h1><?php bloginfo('name') ?></h1></a>
     </div>
     <!-- NAVWALKER -->
-    <div class="nine">
+    <div class="nine columns menu-desktop">
         <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>
     </div>
+    <div class="menu-mobile">
+        <div class="botoMenu" onclick="toggleMenu()">
+          Menu
+        </div>
+    </div>
 </nav>
+<div class="links-menu-mobile" id="menu-responsive">
+  <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>
+</div>
+
 </div>
